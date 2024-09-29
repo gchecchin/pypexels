@@ -14,5 +14,6 @@
 import logging
 API_ROOT = 'https://api.pexels.com'
 API_VERSION = 'v1'
+USER_AGENT = "Pexels/JavaScript"
 LIB_NAME = 'pypexels'
 LOG_LEVEL = logging.ERROR
