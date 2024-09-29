@@ -15,17 +15,17 @@ import requests
 
 from .errors import PexelsError
 from .liblogging import logger
-from .settings import API_ROOT, API_VERSION
+from .settings import API_ROOT, API_VERSION, USER_AGENT
 
 
 class Rest(object):
     api_root = API_ROOT
-
-    def __init__(self, api_key, api_version=API_VERSION):
+    def __init__(self, api_key, api_version=API_VERSION, user_agent=USER_AGENT):
         self.api_version = api_version
         self.api_key = api_key
         self.req_headers = {
             'Authorization': '%s' % api_key,
+            'User-Agent': '%s' % user_agent,
         }
         self._status_code = None
         self._body = None
